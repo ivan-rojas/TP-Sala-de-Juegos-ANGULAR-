@@ -35,7 +35,6 @@ const MiRuteo = [{path: 'error' , component: ErrorComponent},
 {path: 'AgilidadaMasListado' , component: AgilidadMasListadoComponent},
 {path: 'Agilidad' , component: AgilidadAritmeticaComponent},
 {path: '' , component: LoginComponent , pathMatch: 'full'},
-
 {path: '**' , component: ErrorComponent} ];
 */
 import { JugadoresListadoComponent } from './componentes/jugadores-listado/jugadores-listado.component';
@@ -95,4 +94,4 @@ import { SexoPipe } from './pipes/sexo.pipe';
   providers: [ JuegoServiceService, MiHttpService,PaisesService,ArchivosJugadoresService,JugadoresService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { }  
