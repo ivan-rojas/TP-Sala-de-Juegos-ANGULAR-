@@ -1,0 +1,11 @@
+.main-container {
+    text-align: center;
+    color: white;
+}
+
+.main-title {
+    margin-top: 15%;
+    margin-bottom: 0.5em;
+    font-family: 'Lobster', cursive;
+    font-size: 3rem;
+}

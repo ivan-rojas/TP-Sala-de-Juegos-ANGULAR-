@@ -1,10 +1,7 @@
 .panel
 {
-    height: 200px;
-    background-image: url("/TP_LAV4_2017/assets/imagenes/cabecera.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    height: 20rem;
+    background-color: #333;
     position: relative;
 }
 
@@ -18,7 +15,7 @@ transform: translate(-50%, -50%);
 color: #3E06B0;
 }
 
-.hero-text a {
+.hero-text a {  
 border: none;
 outline: 0;
 display: inline-block;

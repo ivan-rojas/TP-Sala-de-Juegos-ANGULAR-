@@ -1,1 +1,25 @@
-<router-outlet></router-outlet>
+<body>
+	<button class="btn btn-success btn-menu" (click)="toggleMenu()"><i class="fa fa-bars"></i></button>
+	<div class="d-flex" id="wrapper" [ngClass]="status ? 'toggled' : ''">
+			<div class="bg-dark" id="sidebar-wrapper">
+				<div class="sidebar-heading">Menu principal </div>
+				<div class="list-group list-group-flush">
+					<a routerLink="/Juegos" class="list-group-item list-group-item-action bg-dark list-item">Juegos</a>
+					<a routerLink="/Listado" class="list-group-item list-group-item-action bg-dark list-item">Listado de resultados</a>
+					<a routerLink="/" class="list-group-item list-group-item-action bg-dark list-item">Configuración</a>
+					<a routerLink="/Jugadores" class="list-group-item list-group-item-action bg-dark list-item">Jugadores</a>
+					<a routerLink="/" class="list-group-item list-group-item-action bg-dark list-item"><i class="fa fa-home"></i></a>
+					<a class="list-group-item list-group-item-action bg-dark list-item list-item-last">
+						<div class="btn-group" role="group">
+							<button type="button" class="btn btn-outline-primary btn-coolwhite" routerLink="/Login" >Ingresar</button>
+							<button type="button" class="btn btn-outline-primary btn-coolwhite" routerLink="/Registro" >Registrarse</button>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div id="page-content-wrapper">
+				<router-outlet></router-outlet>
+			</div>
+			
+	</div>
+</body>

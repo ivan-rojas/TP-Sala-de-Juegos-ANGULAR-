@@ -1,3 +1,111 @@
-body {
-    background-color: #333;
+@import url('https://fonts.googleapis.com/css?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Be+Vietnam&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Anton&display=swap');
+
+.btn-menu {
+    border-radius: 30rem;
+    min-width: 3rem;
+    min-height: 3rem;
+    border: solid 2px white;
+    color: white;
+    background-color: rgb(71, 197, 39);
+    position: fixed;
+    z-index: 333333;
+    right: 5%;
+    top: 5%;
 }
+
+.list-item {
+  color: white;
+}
+
+.list-item-last {
+  border-top:2px solid white;
+}
+
+.btn-coolwhite {
+  color:white;
+  font-size: 1em;
+  border-color:white;
+  font-family: 'Arial', cursive;
+}
+
+.btn-coolwhite:hover {
+  color:#343a40;
+  background-color:white;
+}
+
+.btn-coolgreen {
+  color:rgb(71, 197, 39);
+  font-size: 1em;
+  border-color: rgb(71, 197, 39);
+}
+
+.btn-coolgreen:hover {
+  color:white;
+  background-color:rgb(71, 197, 39);
+}
+
+/* --------------- */
+
+body {
+  overflow-x: hidden;
+  background-color: #333;
+  font-family: 'Be Vietnam', sans-serif;
+}
+
+#sidebar-wrapper {
+    min-height: 100vh;
+    margin-left: -15rem;
+    -webkit-transition: margin .25s ease-out;
+    -moz-transition: margin .25s ease-out;
+    -o-transition: margin .25s ease-out;
+    transition: margin .25s ease-out;
+   
+}
+
+#sidebar-wrapper .sidebar-heading {
+  padding: 0.875rem 1.25rem;
+  font-size: 1.2rem;
+  color: white;
+  text-align: center;
+  border-bottom: 2px solid white;
+}
+
+#sidebar-wrapper .list-group {
+  width: 15rem;
+  text-align: center;
+}
+
+#page-content-wrapper {
+  min-width: 100vw;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  margin-left: 0;
+}
+
+@media (min-width: 768px) {
+  #sidebar-wrapper {
+    margin-left: 0;
+  }
+
+  #page-content-wrapper {
+    min-width: 0;
+    width: 100%;
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
+    margin-left: -15rem;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .btn-menu {
+    top: unset;
+    bottom: 15%;
+    right: 10%;
+  }
+}
+
