@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <div class="main-screen" id="screen" [style.background-image]="'url(' + image + ')'">
+                <div class="row screen-center">
+                    <div class="col-4"></div>
+                    <div class="col-4 align-center">
+                        <h4 class="mess">
+                            {{mensaje}}
+                        </h4>
+                    </div>
+                    <div class="col-4"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-2"></div>
+    </div>
+    <div class="row" *ngIf="!gameOver">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <div class="controllers align-center" *ngIf="!esconderControles">
+                <div class="btn-group">
+                    <button class="btn btn-dark" (click)="Move('izquierda')">Izquierda</button>
+                    <button class="btn btn-dark" (click)="Move('derecho')">Adelante</button>
+                    <button class="btn btn-dark" (click)="Move('derecha')">Derecha</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-2"></div>
+    </div>
+    <div class="row" *ngIf="gameOver">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <div class="controllers align-center">
+                <button class="btn btn-primary full-width" (click)="StartGame()">Volver a jugar</button>
+            </div>
+        </div>
+        <div class="col-2"></div>
+    </div>
+</div>

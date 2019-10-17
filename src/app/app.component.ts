@@ -13,4 +13,9 @@ export class AppComponent {
     this.status = !this.status;
   }
 
+  public Logout(): void
+  {
+    localStorage.clear();
+  }
+
 }

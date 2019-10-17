@@ -1,1 +1,46 @@
 /* You can add global styles to this file, and also import other style files */
+.align-center {
+    text-align: center;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.top-row {
+    margin-top: 5rem;
+}
+
+.middle-row {
+    margin-top: 1.5rem;
+}
+
+.last-row {
+    margin-bottom: 5rem;
+}
+
+.bit-left-margin {
+    margin-left: 1em;
+}
+
+.bit-right-margin {
+    margin-right: 1em;
+}
+
+.error-message {
+    color: red;
+    font-weight: bold;
+}
+
+.success-message {
+    color: green;
+    font-weight: bold;
+}
+
+h1 {
+    color: whitesmoke;
+}
+
+h2 {
+    color: whitesmoke;
+}

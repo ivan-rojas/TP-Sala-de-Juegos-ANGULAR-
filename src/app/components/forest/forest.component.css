@@ -1,0 +1,18 @@
+.main-screen {
+    height: 400px;
+    
+    background-size: cover;
+    color: white;
+}
+
+.screen-center{
+    height: 100%;
+}
+
+.mess {
+    margin-top: 65%;
+}
+
+.controllers {
+    margin-top: 1rem;
+}

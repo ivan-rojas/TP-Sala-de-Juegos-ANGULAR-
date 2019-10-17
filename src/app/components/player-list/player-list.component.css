@@ -1,0 +1,29 @@
+h1 {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    font-family: 'Lobster', cursive;
+    font-size: 3rem;
+    color: white;
+    text-align: center;
+}
+
+tbody {
+    text-align: center;
+    border-right: 1px solid silver;
+    border-left: 1px solid silver;
+    border-bottom: 1px solid silver;
+}
+
+.table-players {
+    background: linear-gradient(rgb(26, 51, 30),rgb(119, 165, 126));
+    color: white;
+}
+
+thead {
+
+    text-align: center;
+    border-right: 1px solid silver;
+    border-left: 1px solid silver;
+    border-top: 1px solid silver;
+    border-bottom: 1px solid silver;
+}

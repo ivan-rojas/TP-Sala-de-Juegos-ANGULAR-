@@ -1,0 +1,67 @@
+<h1 class="align-center">Piedra papel o tijera</h1>
+<div class="container">
+    <div class="row top-row">
+        <div class="col-2"></div>
+        <div class="col-8 align-center gameboard" *ngIf="jugando">
+                <label>JUGADOR</label><br>
+                <h1>?</h1>
+        </div>
+        <div class="col-8 align-center gameboard" *ngIf="mostrar">
+                <label>JUGADOR</label><br>
+            <img src="{{mostrarJugador}}" alt="">
+        </div>
+        <div class="col-2"></div>
+    </div >
+    <div class="row middle-row">
+        <div class="col-12 align-center">
+            <h5>VS</h5>
+        </div>
+    </div>
+    <div class="row middle-row">
+        <div class="col-2"></div>
+        <div class="col-8 align-center gameboard" style="background: linear-gradient(rgb(134, 11, 11), rgb(61, 59, 59));" *ngIf="jugando">
+            <label for="">JAVASCRIPT</label><br>
+            <h1>?</h1>
+        </div>
+        <div class="col-8  align-center gameboard" style="background: linear-gradient(rgb(134, 11, 11), rgb(61, 59, 59));" *ngIf="mostrar">
+                <label for="">JAVASCRIPT</label><br>
+                <img src="{{mostrarMaquina}}" alt="">
+        </div>
+        <div class="col-2"></div>
+    </div>
+</div>
+
+<hr>
+
+<div class="container" *ngIf="jugando">
+        <div class="gameboard" style="background-color: lightgray">
+          <div class="row" >
+            <div class="col-4 text-center text-white" >
+                <label  for="">PIEDRA</label><br>
+                <img (click)="verificarJugada(1)" src='./assets/img/piedra.jpg' class="media-object imagenDeMenu"
+                  alt="" style="width: 100px;height:100px">
+            </div>
+            <div class="col-4 text-white text-center">
+                    <label for="">PAPEL</label><br>
+                <img (click)="verificarJugada(2)" src="./assets/img/papel.jpg" class="media-object imagenDeMenu"
+                  alt="" style="width: 100px;height:100px">
+            </div>
+            <div class="col-4 text-white text-center">
+                    <label  for="">TIJERA</label><br>
+                <img (click)="verificarJugada(3)" src="./assets/img/tijera.jpg"   alt="" style="width: 100px;height:100px">
+            </div>
+            </div>
+            </div>
+            </div>
+            <h1 class="align-center success-message margin-bottom " *ngIf="gano">¡Ganaste!</h1>
+            <h1 class="align-center error-message margin-bottom " *ngIf="perdio">Perdiste</h1>
+            <h1 class="align-center margin-bottom " *ngIf="empato">Empate</h1>
+            <div class="container" *ngIf=nuevo>
+                <div class="row">
+                    <div class="col-lg-4"></div>
+                    <div class="col-lg-4">
+                        <button class="btn btn-outline-primary full-width" (click)="nuevoJuego()">Nueva partida</button>
+                    </div>
+                </div>
+            </div>
+            

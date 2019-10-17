@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="title-description" *ngIf="!jugando">
+    <div class="row">
+      <div class="col-3"></div>
+      <div class="col-6 align-center">
+        <h1>Anagrama</h1>
+      </div>
+      <div class="col-3"></div>
+    </div>    
+    <div class="row middle-row">
+      <div class="col-3"></div>
+      <div class="col-6 align-center">
+        <h5>Arma la palabra con las letras que recibirás en pantalla.</h5>
+      </div>
+      <div class="col-3"></div>
+    </div>
+    <div class="row middle-row">
+      <div class="col-3"></div>
+      <div class="col-6 align-center">
+          <button class="btn btn-success full-width" (click)="NuevoJuego()">Nueva partida</button>
+      </div>
+      <div class="col-3"></div>
+    </div>
+  </div>
+
+  <div class="game" *ngIf="jugando">
+      <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6 align-center">
+          <label for="palabra" class="word">{{palabra.toUpperCase()}}</label>
+          <input type="text" class="form-control align-center full-width" [(ngModel)]="palabraIngresada" placeholder="Palabra armada">
+        </div>
+        <div class="col-3"></div>
+      </div>
+      <div class="row middle-row">
+          <div class="col-3"></div>
+          <div class="col-6 align-center">
+              <button class="btn btn-outline-success full-width" (click)="Verificar()">Comprobar</button>
+          </div>
+          <div class="col-3"></div>
+      </div>
+    </div>  
+    <div class="row middle-row">
+        <div class="col-3"></div>
+        <div class="col-6 align-center">
+            <h1 class="success-message" *ngIf="isWin">¡Ganaste!</h1>
+            <h1 class="error-message" *ngIf="isLose">Perdiste</h1>
+        </div>
+        <div class="col-3"></div>
+    </div>
+</div>

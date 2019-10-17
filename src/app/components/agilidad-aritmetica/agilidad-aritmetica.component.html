@@ -1,0 +1,71 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<!--app-menu></app-menu-->
+<!-- index.html -->
+<div class="container" *ngIf="!enJuego">
+    <div class="row">
+      <div class="col-3"></div>
+      <div class="col-6 align-center">
+          <h1>{{nuevoJuego.nombre}}</h1>
+      </div>
+      <div class="col-3"></div>
+    </div>
+    <div class="row middle-row">
+      <div class="col-3"></div>
+      <div class="col-6">
+          <h5>Resuelve los problemas matemáticos antes de que se acabe el tiempo</h5>
+      </div>
+      <div class="col-3"></div>
+    </div>
+    <div class="row middle-row">
+      <div class="col-3"></div>
+      <div class="col-6">
+        <h2 [hidden]="!ocultarVerificar"><button  (click)="NuevoJuego()"  class="btn btn-outline-success full-width">Nuevo Juego</button></h2>
+      </div>
+      <div class="col-3"></div>
+    </div>
+</div>
+   <div class="container">
+      <div class="row top-row">
+        <div class="col-3"></div>
+        <div class="col-6" *ngIf="enJuego" style="color: white">
+          <div class="row">
+            <div class="col-3"></div>
+            <div class="col-2">
+              <h2 class="align-center">{{nuevoJuego.numeroUno}}</h2>
+            </div>
+            <div class="col-2">
+              <h2 class="align-center" >{{nuevoJuego.operador}}</h2>
+            </div>
+            <div class="col-2">
+              <h2 class="align-center" >{{nuevoJuego.numeroDos}}</h2>
+            </div>
+            <div class="col-3"></div>
+          </div>
+        </div>
+        <div class="col-3"></div>
+      </div>
+      <div class="row middle-row">
+        <div class="col-3"></div>
+        <div class="col-6">
+          <input [(ngModel)]="nuevoJuego.numeroIngresado" placeholder="ingrese numero" name="numeroIngresado" *ngIf="enJuego" type="text" class="align-center full-width form-control" (keyup.Enter)="verificar()" autofocus/>
+        </div>
+        <div class="col-3"></div>
+      </div>
+      <div class="row middle-row">
+        <div class="col-3"></div>
+        <div class="col-6">
+          <h2 [hidden]="ocultarVerificar" ><button (click)="verificar()" class="btn btn-success full-width">Verificar {{Tiempo}} </button></h2>
+          
+        </div>
+        <div class="col-3"></div>
+      </div>
+    </div>
+
+  <div class="align-center" > 
+      <h2 *ngIf="gano" class="success-message" >¡Ganaste!</h2>
+      <h3 *ngIf="enJuego" class="error-message" >Todavía no adivinó </h3>
+      <h2 *ngIf="perdio" class="error-message" >Perdiste</h2>
+  </div>
+    
+  
+

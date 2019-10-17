@@ -6,3 +6,14 @@ h1 {
     color: white;
     text-align: center;
 }
+
+.table-players {
+    background: linear-gradient(#333, rgb(82, 78, 78), #333)
+}
+
+thead {
+    text-align: center;
+    border-right: 2px solid white;
+    border-left: 2px solid white;
+    border-top: 2px solid white;
+}
