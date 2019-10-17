@@ -16,7 +16,23 @@ export class ListadoComponent implements OnInit {
   }
   
   ngOnInit() {
-    
+    this.listadoParaCompartir = [
+      {nombre: "TaTeTi", jugador: "Jorge", gano: false},
+      {nombre: "PPT", jugador: "Iván", gano: true},
+      {nombre: "Adivina el nro", jugador: "Martin", gano: false},
+      {nombre: "Adivina el nro", jugador: "Jorge", gano: true},
+      {nombre: "TaTeTi", jugador: "Román", gano: true},
+      {nombre: "TaTeTi", jugador: "Román", gano: false},
+      {nombre: "PPT", jugador: "Martin", gano: true},
+      {nombre: "Adivina el nro", jugador: "Martin", gano: false},
+      {nombre: "Adivina el nro", jugador: "Martin", gano: true},
+      {nombre: "PPT", jugador: "Iván", gano: false},
+      {nombre: "TaTeTi", jugador: "Jorge", gano: false},
+      {nombre: "PPT", jugador: "Jorge", gano: false},
+      {nombre: "PPT", jugador: "Martin", gano: false},
+      {nombre: "Adivina el nro", jugador: "Jorge", gano: true},
+      {nombre: "TaTeTi", jugador: "Jorge", gano: true},
+    ];
   }
 
   llamaService(){

@@ -338,7 +338,7 @@ if (content.locals) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Working on\_Repositories\TP-SalaDeJuegos\TP-Sala-de-Juegos-ANGULAR-\src\styles.css */"./src/styles.css");
+module.exports = __webpack_require__(/*! C:\Users\ivan.rodrigo.rojas\Desktop\tp\TP-Sala-de-Juegos-ANGULAR--master\src\styles.css */"./src/styles.css");
 
 
 /***/ })

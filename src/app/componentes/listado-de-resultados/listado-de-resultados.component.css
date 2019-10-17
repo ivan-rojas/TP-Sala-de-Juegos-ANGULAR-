@@ -6,3 +6,7 @@ h1 {
     color: white;
     text-align: center;
 }
+
+.listado-resultados {
+    background: linear-gradient(darkgrey, white)
+}
