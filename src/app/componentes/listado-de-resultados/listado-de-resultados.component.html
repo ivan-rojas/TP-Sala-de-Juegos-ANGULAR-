@@ -9,7 +9,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let juego of listado">
+      <tr *ngFor="let juego of listado | async">
         <td>{{juego.nombre}} </td>
         <td>{{juego.jugador}} </td> 
         <td *ngIf="juego.gano">Gano </td>   

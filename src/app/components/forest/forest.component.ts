@@ -1,4 +1,6 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
+import { Score } from '../../models/score';
+import { ScoreService } from '../../services/firebase/score.service';
 
 @Component({
   selector: 'app-forest',
@@ -20,7 +22,7 @@ export class ForestComponent implements OnInit {
   public gameOver: boolean = false;
   public esconderControles: boolean = true;
 
-  constructor(private el: ElementRef) { }
+  constructor(private el: ElementRef, private service: ScoreService) { }
 
   ngOnInit() {
     this.status = 0;
@@ -56,7 +58,6 @@ export class ForestComponent implements OnInit {
       {
         this.StillLost();
       }
-
     }
   }
 
@@ -72,6 +73,7 @@ export class ForestComponent implements OnInit {
           this.mensaje = 'Logras escapar!'
           this.gameOver = true;
         },3000);
+      this.service.Add(new Score('Forest', true));
   }
 
   Random(): number
@@ -113,6 +115,7 @@ export class ForestComponent implements OnInit {
           this.mensaje = 'Estás muerto.'
           this.gameOver = true;
         },3000);
+        this.service.Add(new Score('Forest', false));
         break;
     }
     this.chaseCount++;

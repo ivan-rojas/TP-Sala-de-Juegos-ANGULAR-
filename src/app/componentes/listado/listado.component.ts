@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { JuegoServiceService } from '../../servicios/juego-service.service';
+import { ScoreService } from '../../services/firebase/score.service';
 
 @Component({
   selector: 'app-listado',
@@ -9,13 +10,17 @@ import { JuegoServiceService } from '../../servicios/juego-service.service';
 export class ListadoComponent implements OnInit {
   public listadoParaCompartir: Array<any>;
    miServicioJuego:JuegoServiceService
+  
+  public listadoResultados;
 
-  constructor(servicioJuego:JuegoServiceService) {
+  constructor(servicioJuego:JuegoServiceService, private service: ScoreService) {
     this.miServicioJuego = servicioJuego;
     
   }
   
   ngOnInit() {
+    this.listadoResultados = this.service.GetAll();
+    /*
     this.listadoParaCompartir = [
       {nombre: "TaTeTi", jugador: "Jorge", gano: false},
       {nombre: "PPT", jugador: "Iván", gano: true},
@@ -32,7 +37,7 @@ export class ListadoComponent implements OnInit {
       {nombre: "PPT", jugador: "Martin", gano: false},
       {nombre: "Adivina el nro", jugador: "Jorge", gano: true},
       {nombre: "TaTeTi", jugador: "Jorge", gano: true},
-    ];
+    ];*/
   }
 
   llamaService(){

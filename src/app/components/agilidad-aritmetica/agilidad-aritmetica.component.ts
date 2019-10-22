@@ -1,5 +1,7 @@
 import { Component, OnInit ,Input,Output,EventEmitter} from '@angular/core';
-import { JuegoAgilidad } from '../../clases/juego-agilidad'
+import { JuegoAgilidad } from '../../clases/juego-agilidad';
+import { Score } from '../../models/score';
+import { ScoreService } from '../../services/firebase/score.service';
 
 import {Subscription} from "rxjs";
 import {TimerObservable} from "rxjs/observable/TimerObservable";
@@ -23,7 +25,7 @@ export class AgilidadAritmeticaComponent implements OnInit {
   ngOnInit() {
   }
 
-   constructor() 
+   constructor(private service: ScoreService) 
   {
     this.ocultarVerificar=true;
     this.Tiempo=5; 
@@ -62,10 +64,13 @@ export class AgilidadAritmeticaComponent implements OnInit {
     if(this.nuevoJuego.verificar())
     {
       this.gano=true;
+      this.service.Add(new Score('Agilidad', true));
+      
     }
     else
     {
       this.perdio=true;
+      this.service.Add(new Score('Agilidad', false));
     }
 
     this.enJuego = false

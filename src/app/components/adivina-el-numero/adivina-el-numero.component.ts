@@ -1,5 +1,7 @@
 import { Component, OnInit ,Input,Output,EventEmitter} from '@angular/core';
 import { JuegoAdivina } from '../../clases/juego-adivina'
+import { ScoreService } from '../../services/firebase/score.service';
+import { Score } from '../../models/score';
 
 @Component({
   selector: 'app-adivina-el-numero',
@@ -14,7 +16,7 @@ export class AdivinaElNumeroComponent implements OnInit {
   contador:number;
   ocultarVerificar:boolean;
  
-  constructor() { 
+  constructor(private service: ScoreService) { 
     this.nuevoJuego = new JuegoAdivina();
     console.info("numero Secreto:",this.nuevoJuego.numeroSecreto);  
     this.ocultarVerificar=false;
@@ -33,6 +35,7 @@ export class AdivinaElNumeroComponent implements OnInit {
       this.enviarJuego.emit(this.nuevoJuego);
       this.MostarMensaje("¡Ganaste!",true);
       this.nuevoJuego.numeroSecreto=0;
+      this.service.Add(new Score('Adivina el nro', true));
 
     }else{
 

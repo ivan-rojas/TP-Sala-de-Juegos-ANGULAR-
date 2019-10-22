@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Score } from '../../models/score';
+import { ScoreService } from '../../services/firebase/score.service';
 import { JuegoTateti } from '../../clases/juego-tateti';
 
 
@@ -17,7 +19,7 @@ export class TatetiComponent implements OnInit {
   loser:boolean=false;
   winner:boolean=false;
   draw:boolean=false;
-  constructor() {
+  constructor(private service: ScoreService) {
     this.nuevoJuego = new JuegoTateti();
   
 }
@@ -44,6 +46,7 @@ marcarJugada(row: number, column: number, jugadaGenerada: boolean) {
       if(this.nuevoJuego.verificarTresEnLinea(this.imgCruz)){
         if(!this.nuevoJuego.verificar()){
           this.loser=true;
+          this.service.Add(new Score('TATETI', false));
         }
       }
     }
@@ -58,6 +61,7 @@ marcarJugada(row: number, column: number, jugadaGenerada: boolean) {
         }, 400);
       } else {
         this.winner=true;
+        this.service.Add(new Score('TATETI', true));
       }
     }
   }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Score } from '../../models/score';
+import { ScoreService } from '../../services/firebase/score.service';
 
 @Component({
   selector: 'app-ppt',
@@ -18,7 +20,7 @@ gano=false;
 perdio=false;
 empato=false;
 nuevo=false;
-  constructor() { }
+  constructor(private service: ScoreService) { }
 
   ngOnInit() {
   }
@@ -42,6 +44,7 @@ nuevo=false;
                 if (this.jugadaMaquina == 1) 
                 {
                     this.resultado = 0 // empate
+                    
                 } 
                 else 
                 {
@@ -52,6 +55,7 @@ nuevo=false;
                     else
                     {
                         this.resultado = 1 // usr gana
+                        
                     }
                 }
                 break;
@@ -104,6 +108,7 @@ nuevo=false;
       if(this.resultado==1)
       {
         this.gano=true;
+        this.service.Add(new Score('PPT', true));
       }
       else
       {
@@ -114,6 +119,7 @@ nuevo=false;
         else
         {
           this.perdio=true;
+          this.service.Add(new Score('PPT', false));
         }
       }
     }

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Score } from '../../models/score';
+import { ScoreService } from '../../services/firebase/score.service';
 
 @Component({
   selector: 'app-anagrama',
@@ -17,7 +19,7 @@ isLose=false;
 diccionario: {[id: number]: string;} = {1:"movilidad", 2:"hola", 3:"jugar", 4:"facultad",
     5: "universidad", 6: "torpeza", 7: "aburrido", 8: "trabajo",9:"dormir",10:"comer",11:"despertar",12:"chau",13:"pagar",14:"nadar",
   15:"cargar",16:"guardar",17:"destruir",18:"romper",19:"arreglar",20:"trabar"};
-  constructor() { }
+  constructor(private service: ScoreService) { }
 NuevoJuego()
 {
   this.palabraIngresada="";
@@ -46,12 +48,14 @@ Verificar()
     this.jugando=false;
     this.isWin=true;
     this.isLose=false;
+    this.service.Add(new Score('Anagrama', true));
   }
   else
   {
       this.jugando=false;
       this.isLose=true;
       this.isWin=false;
+      this.service.Add(new Score('Anagrama', false));
   }
 }
 }

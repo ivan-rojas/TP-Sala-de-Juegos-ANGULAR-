@@ -1,4 +1,3 @@
-
 import { Component, OnInit , Input, EventEmitter} from '@angular/core';
 
 @Component({
@@ -8,14 +7,14 @@ import { Component, OnInit , Input, EventEmitter} from '@angular/core';
 })
 export class ListadoDeResultadosComponent implements OnInit {
  @Input()
- listado: Array<any>;
+ listado: any;
+
 
 
   constructor() {
    }
 
   ngOnInit() {
-
   }
 
   ver() {
